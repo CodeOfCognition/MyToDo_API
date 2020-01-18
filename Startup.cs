@@ -20,8 +20,8 @@ namespace MyToDo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<MyToDoContext>(opt =>
-                opt.UseInMemoryDatabase("MyToDoList"));
+            services.AddDbContext<MyToDoContext>(options =>
+                options.UseSqlite(Configuration.GetConnectionString("MyToDoContext")));
             services.AddControllersWithViews();
         }
 

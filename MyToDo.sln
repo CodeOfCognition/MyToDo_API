@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyToDo", "MyToDo.csproj", "{06F1A73E-96E5-43E9-B3F5-2C0F56A0FD6C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyToDo", "MyToDo.csproj", "{7A13BF7A-A1AC-4CB6-B7D1-79899C094851}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,9 +9,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{06F1A73E-96E5-43E9-B3F5-2C0F56A0FD6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06F1A73E-96E5-43E9-B3F5-2C0F56A0FD6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06F1A73E-96E5-43E9-B3F5-2C0F56A0FD6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06F1A73E-96E5-43E9-B3F5-2C0F56A0FD6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A13BF7A-A1AC-4CB6-B7D1-79899C094851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A13BF7A-A1AC-4CB6-B7D1-79899C094851}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A13BF7A-A1AC-4CB6-B7D1-79899C094851}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A13BF7A-A1AC-4CB6-B7D1-79899C094851}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
