@@ -22,6 +22,7 @@ namespace MyToDo
         {
             services.AddDbContext<MyToDoContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("MyToDoContext")));
+
             services.AddControllersWithViews();
         }
 

@@ -11,7 +11,7 @@
     <ApplicationURL>http://localhost:5000</ApplicationURL>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.0">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.1">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
@@ -26,5 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\myToDoItems\Index.css" />
+    <None Remove="MvcMyToDo.db" />
+    <None Remove="MyToDoData.db" />
   </ItemGroup>
 </Project>
