@@ -1,9 +1,19 @@
+@model List<MyToDoItem>
 @{
     ViewData["Title"] = "Home Page";
 }
 
 
 <div class="text-center">
-    <h1 class="display-4">Code Now on GitHub!</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Check out this neat list y'all!</h1>
+    <p>
+        
+    </p>
 </div>
+
+@foreach (var item in Model)
+    {
+    <p>Name: @item.Name</p>
+    <p>Id: @item.Id</p>
+    <p>IsComplete: @item.IsComplete</p>
+    }

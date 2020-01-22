@@ -12,15 +12,18 @@ namespace MyToDo.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly MyToDoContext _context;
+  
+        public HomeController(ILogger<HomeController> logger, MyToDoContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var toDoItems = _context.MyToDoItems.ToList();
+            return View(toDoItems);
         }
 
         public IActionResult Privacy()

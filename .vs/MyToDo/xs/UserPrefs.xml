@@ -1,14 +1,16 @@
 ﻿<Properties StartupConfiguration="{7A13BF7A-A1AC-4CB6-B7D1-79899C094851}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MyToDoData.db">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/MyToDoItem.cs">
     <Files>
       <File FileName="Models/SeedData.cs" Line="17" Column="1" />
       <File FileName="Program.cs" />
       <File FileName="Startup.cs" />
-      <File FileName="Controllers/MyToDoItemsController.cs" />
-      <File FileName="Migrations/20200118232742_initialCreate.cs" />
+      <File FileName="Controllers/MyToDoItemsController.cs" Line="14" Column="56" />
       <File FileName="Models/MyToDoContext.cs" />
+      <File FileName="Views/Home/Index.cshtml" Line="17" Column="20" />
       <File FileName="Migrations/MyToDoContextModelSnapshot.cs" Line="6" Column="1" NotebookId="1" />
-      <File FileName="MyToDoData.db" Line="1" Column="1" NotebookId="1" />
+      <File FileName="MyToDoData.db" Line="10" Column="35" NotebookId="1" />
+      <File FileName="Controllers/HomeController.cs" Line="21" Column="10" NotebookId="1" />
+      <File FileName="Models/MyToDoItem.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,9 +22,12 @@
               </Node>
               <Node name="Controllers" expanded="True" />
               <Node name="Migrations" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Views" expanded="True" />
-              <Node name="MyToDoData.db" selected="True" />
+              <Node name="Models" expanded="True">
+                <Node name="MyToDoItem.cs" selected="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
