@@ -22,8 +22,15 @@ namespace MyToDo.Controllers
 
         public IActionResult Index()
         {
-            var toDoItems = _context.MyToDoItems.ToList();
-            return View(toDoItems);
+            try
+            {
+                var toDoItems = _context.MyToDoItems.ToList();
+                return View(toDoItems);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
         }
 
         public IActionResult Privacy()
