@@ -4,13 +4,52 @@
 <html>
 <head>
     <title>@ViewData["Title"] = "Home Page";</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            var itemName, itemID, itemCompletion;
+            var apiurl = "http://localhost:5000/api/MyToDoItems";
+            $('form').submit(function (evt) {
+                evt.preventDefault();
+                alert("Standard submitting procedure prevented");
+                
+                itemName = $('#itemName').val();
+                itemID = $('#itemID').val();
+                itemCompletion = $('input[name=itemCompletion]:checked').val();
+                //document.write("<p>The following details are now saved in js variables:" +
+                    //"<br/>Name: " + itemName + "<br/>ID: " + itemID +
+                    //"<br/>Complete: " + itemCompletion);
 
+                var data =
+                {
+                    Id: itemID,
+                    Name: itemName,
+                    IsComplete: itemCompletion,
+                }
+
+                $.ajax({
+                    url: apiurl,
+                    type: 'POST',
+                    dataType: 'json',
+                    data: data,
+                    success: function () {
+                        alert("Saved Successfully");
+                        document.getElementById("postForm").reset();
+                    },
+                    error: function () {
+                        alert("Error, please try again");
+                    }
+
+
+                }); //end ajax
+            }); // end submit
+        }); // end ready
+    </script>
 </head>
 <body>
 
-    <script src="http://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-            crossorigin="anonymous"></script>
 
     <div class="text-center">
         <h1 class="display-4">Check out this neat list y'all!</h1>
@@ -54,6 +93,31 @@
             }
         </table>
      </div>
+
+    <p>
+        Fill out fields to add new item to the list:
+    </p>
+    <form id="postForm" action="/process.php">
+        <div>
+            <label for="itemName" class="label">Name</label>
+            <input name="itemName" type="text" id="itemName" size="32">
+        </div>
+        <div>
+            <label for="itemID" class="label">ID</label>
+            <input name="itemID" type="number" id="itemID" size="32">
+        </div>
+        <div>
+            <label for="itemCompletion" class="label">Is it Complete?</label>
+            <input name="itemCompletion" type="radio" id="yes" value="True">
+             <label for="yes">Yes</label>
+            <input name="itemCompletion" type="radio" id="no" value="False">
+             <label for"no">No</label>
+        </div>
+        <div>
+            <input type="submit" name="submit" id="submit" value="Submit">
+        </div>
+    </form>
+    
 
 </body>
 </html>

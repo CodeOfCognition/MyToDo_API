@@ -74,15 +74,13 @@ namespace MyToDo.Controllers
         }
 
         // POST: api/MyToDoItems
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<MyToDoItem>> PostMyToDoItem(MyToDoItem MyToDoItem)
+        public async Task<ActionResult<MyToDoItem>> PostMyToDoItem(MyToDoItem myToDoItem)
         {
-            _context.MyToDoItems.Add(MyToDoItem);
+            _context.MyToDoItems.Add(myToDoItem);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetMyToDoItem), new { id = MyToDoItem.Id }, MyToDoItem);
+            return CreatedAtAction(nameof(GetMyToDoItem), new { id = myToDoItem.Id }, myToDoItem);
         }
 
         // DELETE: api/MyToDoItems/5
