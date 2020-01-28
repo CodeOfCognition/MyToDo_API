@@ -11,7 +11,8 @@
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
             crossorigin="anonymous">
     </script>
-    <script>$(document).ready(function () {
+    <script>
+$(document).ready(function () {
             var itemName, itemID, itemCompletion;
             var apiurl = "http://localhost:5000/api/MyToDoItems";
             $('form').submit(function (evt) {
@@ -33,24 +34,18 @@
                 }
 
                 $.ajax({
-                    url: apiurl,
-                    type: 'POST',
-                    dataType: 'json',
-                    data: JSON.stringify(data),
-                    contentType: 'application/json',
-                    success: function () {
-                        alert("Saved Successfully");
-                        document.getElementById("postForm").reset();
-                    },
-                    error: function () {
-                        alert("Error, please try again");
-                    }
+            type: "POST", url: '@Url.Action("PostMyToDoItem", "MyToDoItems")',
+            success: function () {
+                 location.reload(true);
+            },
+            data: {"myToDoItem":data},
+            accept: 'application/json'
 
 
                 }); //end ajax
             }); // end submit
      }); // end ready
-     </script>
+    </script>
 </head>
 <body>
 

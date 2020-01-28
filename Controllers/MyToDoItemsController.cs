@@ -43,7 +43,7 @@ namespace MyToDo.Controllers
 
         // POST: api/MyToDoItems
         [HttpPost]
-        public async Task<ActionResult<MyToDoItem>> PostMyToDoItem(MyToDoItem myToDoItem)
+        public async Task<ActionResult<MyToDoItem>> PostMyToDoItem([FromForm]MyToDoItem myToDoItem)
         {
             _context.MyToDoItems.Add(myToDoItem);
             await _context.SaveChangesAsync();
