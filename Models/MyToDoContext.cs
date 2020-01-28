@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 namespace MyToDo.Models
 {
     public class MyToDoContext : DbContext
@@ -12,4 +11,3 @@ namespace MyToDo.Models
         public DbSet<MyToDoItem> MyToDoItems { get; set; }
     }
 }
-

@@ -13,7 +13,7 @@ namespace MyToDo.Models
                 serviceProvider.GetRequiredService<
                     DbContextOptions<MyToDoContext>>()))
             {
-                // Look for any MyToDoItems.
+                // Look for any MyToDoItems
                 if (context.MyToDoItems.Any())
                 {
                     return;   // DB has been seeded

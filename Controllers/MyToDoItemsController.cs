@@ -26,7 +26,7 @@ namespace MyToDo.Controllers
         {
             return await _context.MyToDoItems.ToListAsync();
         }
-
+        
         // GET: api/MyToDoItems/5
         [HttpGet("{id}")]
         public async Task<ActionResult<MyToDoItem>> GetMyToDoItem(long id)
@@ -40,6 +40,19 @@ namespace MyToDo.Controllers
 
             return MyToDoItem;
         }
+
+        // POST: api/MyToDoItems
+        [HttpPost]
+        public async Task<ActionResult<MyToDoItem>> PostMyToDoItem(MyToDoItem myToDoItem)
+        {
+            _context.MyToDoItems.Add(myToDoItem);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetMyToDoItem), new { id = myToDoItem.Id }, myToDoItem);
+        }
+
+
+        /*
 
         // PUT: api/MyToDoItems/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
@@ -73,15 +86,7 @@ namespace MyToDo.Controllers
             return NoContent();
         }
 
-        // POST: api/MyToDoItems
-        [HttpPost]
-        public async Task<ActionResult<MyToDoItem>> PostMyToDoItem(MyToDoItem myToDoItem)
-        {
-            _context.MyToDoItems.Add(myToDoItem);
-            await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetMyToDoItem), new { id = myToDoItem.Id }, myToDoItem);
-        }
 
         // DELETE: api/MyToDoItems/5
         [HttpDelete("{id}")]
@@ -103,5 +108,6 @@ namespace MyToDo.Controllers
         {
             return _context.MyToDoItems.Any(e => e.Id == id);
         }
+        */
     }
 }
