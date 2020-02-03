@@ -1,0 +1,91 @@
+This is the SQL Code for the CRUD stored procedure methods in the "ToDoData" Database for access to the table dbo.Items.
+
+
+
+IF OBJECT_ID('crud_ToDoDataCreate') IS NOT NULL
+BEGIN
+    DROP PROC crud_ToDoDataCreate
+END
+GO
+CREATE PROC crud_ToDoDataCreate
+    (
+        @ItemName [nvarchar] (255),
+        @IsComplete [bit],
+        @Id [int]
+    )
+AS
+    SET NOCOUNT ON
+    SET XACT_ABORT ON
+    SET IDENTITY_INSERT Items ON
+    BEGIN TRANSACTION
+
+    INSERT INTO Items
+    (
+        ItemName, IsComplete, Id
+    )
+    VALUES
+    (
+        @ItemName,
+        @IsComplete,
+        @Id
+    )
+
+    SELECT 
+    Id = @Id,
+    IsComplete = @IsComplete,
+    ItemName = @ItemName
+
+    FROM Items
+    WHERE (Id = @Id)
+
+    COMMIT
+    GO
+
+
+
+
+CREATE PROC crud_ToDoDataRead
+    @Id int
+AS 
+BEGIN 
+ 
+	SELECT Id, ItemName, IsComplete
+	FROM Items
+	WHERE (Id = @Id)
+END
+GO
+
+
+
+CREATE PROC crud_ToDoDataUpdate
+    @Id int,
+    @ItemName NVARCHAR(225),
+    @IsComplete BIT
+AS
+BEGIN
+
+UPDATE Items
+SET ItemName = @ItemName,
+    IsComplete = @IsComplete
+WHERE Id = @Id
+END
+GO
+
+
+
+
+CREATE PROC crud_ToDoDataDelete
+@Id INT
+AS
+BEGIN
+DELETE
+FROM Items
+WHERE Id = @Id
+END
+GO
+
+
+
+
+
+
